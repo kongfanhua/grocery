@@ -1,0 +1,3 @@
+com\grocery\sys\SwaggerConfiguration.class
+com\grocery\sys\feign\UserFeign.class
+com\grocery\sys\SysApplication.class

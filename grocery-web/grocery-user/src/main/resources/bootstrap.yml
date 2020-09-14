@@ -1,0 +1,46 @@
+grocery:
+  nacos:
+    ip: @nacos.ip@
+    port: @nacos.port@
+    namespace: @nacos.namespace@
+
+#http访问端口
+server:
+  port: 6740
+  servlet:
+    context-path: /user
+  tomcat:
+    protocol_header: x-forwarded-proto
+    remote_ip_header: x-forwarded-for
+    port-header: X-Forwarded-Port
+  use-forward-headers: true
+
+#默认环境dev
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: @project.artifactId@
+  profiles:
+    active: @profile.active@
+  cloud:
+    nacos:
+      config:
+        server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
+        file-extension: yml
+        namespace: ${grocery.nacos.namespace}
+      discovery:
+        server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
+        namespace: ${grocery.nacos.namespace}
+    sentinel:
+      datasource:
+        ds:
+          nacos:
+            dataId: ${spring.application.name}-sentinel
+            groupId: DEFAULT_GROUP
+            ruleType: flow
+            data-type: json
+            server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
+      eager: true
+      transport:
+        dashboard: localhost:8080
