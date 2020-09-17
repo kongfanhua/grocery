@@ -1,14 +1,11 @@
-package com.grocery.sys.feign;
+package com.grocery.sys.controller;
 
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 @RequestMapping(value = "/test")
-@Api(tags = "课程预约", value = "课程预约")
-public class UserFeign {
+@Api(tags = "用户管理", value = "用户管理")
+public class UserController {
 
     @GetMapping("/testFeign")
     @ApiOperation(value="测试远程调用")
@@ -34,6 +31,11 @@ public class UserFeign {
         {
             e.printStackTrace();
         }
+    }
 
+    @GetMapping("/testGateway")
+    @ApiOperation(value="测试网关")
+    public String  testGateway(){
+        return  "testGateway";
     }
 }

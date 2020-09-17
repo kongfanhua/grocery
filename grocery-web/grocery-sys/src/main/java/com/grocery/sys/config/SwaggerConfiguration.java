@@ -1,4 +1,4 @@
-package com.grocery.sys;
+package com.grocery.sys.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;

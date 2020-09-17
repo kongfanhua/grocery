@@ -1,4 +1,4 @@
-package com.grocery.sys;
+package com.grocery.sys.config;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

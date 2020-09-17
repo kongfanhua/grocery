@@ -1,0 +1,34 @@
+#http访问端口
+server:
+  port: 9999
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
+        namespace: ${grocery.nacos.namespace}
+      config:
+        server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
+        file-extension: yml
+        namespace: ${grocery.nacos.namespace}
+    gateway:
+      routes:
+      - id: gateway-sys # 我们自定义的路由 ID，保持唯一
+        uri: lb://grocery-sys  #目标服务地址
+        predicates:
+        - Path=/java/**
+        filters:
+        -StripPrefix=1
+      - id: gateway-user # 我们自定义的路由 ID，保持唯一
+        uri: lb://grocery-user  #目标服务地址
+        predicates:
+        - Path=/java/**
+        filters:
+        -StripPrefix=1
+        -JwtCheck
+

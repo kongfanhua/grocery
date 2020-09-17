@@ -11,6 +11,8 @@
     <modules>
         <module>grocery-common</module>
         <module>grocery-web</module>
+        <module>gateway</module>
+        <module>auth</module>
     </modules>
    <!--   必须引入 -->
     <parent>
