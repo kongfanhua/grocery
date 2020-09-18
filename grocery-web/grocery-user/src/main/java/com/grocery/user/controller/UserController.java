@@ -64,7 +64,7 @@ public class UserController {
 
 
 
-    @Value("${secretKey:123456}")
+    //@Value("${secretKey:123456}")
     private String secretKey;
 
 

@@ -40,7 +40,7 @@
     <build>
         <!-- 利用 filters 指定加载配置文件-->
         <filters>
-            <filter>../src/main/filters/config-${profile.active}.properties</filter>
+            <filter>../../src/main/filters/config-${profile.active}.properties</filter>
         </filters>
         <plugins>
             <plugin>

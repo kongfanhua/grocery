@@ -1,2 +1,6 @@
 com\grocery\common\redis\RedisUtil.class
+com\grocery\common\model\ResponseResult.class
+com\grocery\common\enums\ResponseCodeEnum.class
+com\grocery\common\exception\TokenAuthenticationException.class
 com\grocery\common\redis\RedisConfigurtion.class
+com\grocery\common\util\JWTUtil.class

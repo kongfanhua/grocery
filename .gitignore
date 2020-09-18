@@ -3,4 +3,5 @@ grocery-web/grocery-user/target/
 grocery-web/grocery-sys/target/
 gateway/target/
 grocery-common/target/
+grocery-web/target/
 
