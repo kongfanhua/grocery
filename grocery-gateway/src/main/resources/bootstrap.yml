@@ -15,10 +15,6 @@ spring:
     name: @artifactId@
   cloud:
     nacos:
-      config:
-        server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
-        file-extension: yml
-        namespace: ${grocery.nacos.namespace}
       discovery:
         server-addr: ${grocery.nacos.ip}:${grocery.nacos.port}
         namespace: ${grocery.nacos.namespace}

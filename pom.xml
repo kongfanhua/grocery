@@ -11,7 +11,7 @@
     <modules>
         <module>grocery-common</module>
         <module>grocery-web</module>
-        <module>gateway</module>
+        <module>grocery-gateway</module>
     </modules>
    <!--   必须引入 -->
     <parent>
@@ -29,35 +29,24 @@
         </repository>
     </repositories>
 
-
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
-    </properties>
+        <netflix.ribbon.version>2.3.0</netflix.ribbon.version>
+        <xiaoymin-knife4j.version>2.0.2</xiaoymin-knife4j.version>
+        <google.guava.version>22.0</google.guava.version>
+        <baomidou.version>3.1.1</baomidou.version>
+        <mysql-connector.version>8.0.21</mysql-connector.version>
+        <alibaba.druid.version>1.1.10</alibaba.druid.version>
+        <auth0-jwt.version>3.10.0</auth0-jwt.version>
+        <projectlombok.version>1.18.6</projectlombok.version>
+        <alibaba.fastjson.version>1.2.70</alibaba.fastjson.version>
+        <alibaba.csp.version>1.5.2</alibaba.csp.version>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-    </dependencies>
+    </properties>
 
     <!-- dependencyManagement里只是声明依赖，并不实现引入，因此子项目需要显示的声明需要用的依赖-->
     <dependencyManagement>
